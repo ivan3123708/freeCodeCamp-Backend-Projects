@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Timestamp Microservice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+  </head>
+
+  <body>
+
+    <div class="container">
+      <h1>API Timestamp Microservice</h1>
+      
+      <div class="user-stories">
+        <h3>User stories:</h3>
+      
+        <p> - I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a
+          natural language date (example: January 1, 2016)</p>
+        <p> - If it does, it returns both the Unix timestamp and the natural language form of that date.</p>
+        <p> - If it does not contain a date or Unix timestamp, it returns null for those properties.</p>
+      </div>
+
+      <div class="examples">
+        <h3>Example usage:</h3>
+        <code>https://ij-timestamp.glitch.me/December%2015,%202015</code><br>
+        <code>https://ij-timestamp.glitch.me/1450137600</code>
+  
+        <h3>Example output:</h3>
+        <code>{ "unix": 1450137600, "natural": "December 15, 2015" }</code>
+      </div>
+    </div>
+    
+  </body>
+</html>

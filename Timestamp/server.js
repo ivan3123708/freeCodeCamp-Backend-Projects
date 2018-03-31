@@ -1,9 +1,14 @@
+const path = require('path');
 const express = require('express');
+const moment = require('moment');
 
+const publicPath = path.join(__dirname, 'public');
 const app = express();
 
+app.use(express.static(publicPath));
+
 app.get('/', (req, res) => {
-  res.send('HOME PAGE');
+  res.render('index.html');
 });
 
 app.get('/:date', (req, res) => {
@@ -12,12 +17,12 @@ app.get('/:date', (req, res) => {
   let dateUnix;
   let dateNatural;
 
-  if (/^(\d){10}$/g.test(date)) {
-    dateUnix = date;
-    dateNatural = new Date(date * 1000).getFullYear();
+  if (/^\d*$/.test(date)) {
+    dateUnix = parseInt(date);
+    dateNatural = moment(parseInt(date * 1000)).format('MMM D, YYYY')
   } else {
-    dateUnix = new Date(date).getTime() / 1000;
-    dateNatural = date;
+    dateUnix = new Date(date).getTime() / 1000 || null;
+    dateNatural = dateUnix ? date : null;
   }
 
   res.send({
