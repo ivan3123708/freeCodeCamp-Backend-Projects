@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Image Search Abstraction Layer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+  </head>
+
+  <body>
+
+    <div class="container">
+      <h1>Image Search Abstraction Layer</h1>
+      
+      <div class="user-stories">
+        <h3>User stories:</h3>
+      
+        <p> - I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</p>
+        <p> - I can paginate through the responses by adding a offset=2 parameter to the URL.</p> 
+        <p> - I can get a list of the most recently submitted search strings.</p> 
+      </div>
+
+      <div class="examples">
+        <h3>Example usage:</h3>
+        <pre>https://ij-img-search.glitch.me/api/search?q=magnolia</pre>
+        <pre>https://ij-img-search.glitch.me/api/recent</pre>
+  
+        <h3>Example output:</h3>
+        <pre>
+[
+  {
+    description: "Southern Magnolia Tree Care: Growing Magnolias In Your Garden",
+    url: "https://maxpull-tlu7l6lqiu.stackpathdns.com/wp-content/uploads/20...jpg",
+    thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdWmwTvb...",
+    parentPage: "https://www.gardeningknowhow.com/ornamental/trees/magnolia...html"
+  },
+  ...
+]
+        </pre>
+        <pre>
+[
+  {
+    term: "magnolia",
+    when: "Tue Apr 03 2018 05:28:04 GMT+0200 (CEST)"
+  },
+  ...
+]
+        </pre>
+      </div>
+    </div>
+    
+  </body>
+</html>
