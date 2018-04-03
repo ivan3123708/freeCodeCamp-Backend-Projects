@@ -10,8 +10,12 @@
 
 ### Example usage:
 
-`https://ij-img-search.glitch.me/api/search?q=magnolia`
-`https://ij-img-search.glitch.me/api/recent`
+```
+https://ij-img-search.glitch.me/api/search?q=magnolia
+```
+```
+https://ij-img-search.glitch.me/api/recent
+```
 
 ### Example output:
 ```

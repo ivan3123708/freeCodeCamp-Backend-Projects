@@ -39,16 +39,16 @@ app.get('/api/search', (req, res) => {
     when: new Date().toString()
   };
 
-  const logFile = fs.readFileSync('./log.txt');
+  const logFile = fs.readFileSync('./log.json');
   const log = JSON.parse(logFile);
 
   log.unshift(searchRecord);
 
-  fs.writeFileSync('log.txt', JSON.stringify(log));
+  fs.writeFileSync('log.json', JSON.stringify(log));
 });
 
 app.get('/api/recent', (req, res) => {
-  fs.readFile('./log.txt', (err, dataFile) => {
+  fs.readFile('./log.json', (err, dataFile) => {
     if (err) throw err;
 
     const data = JSON.parse(dataFile);
